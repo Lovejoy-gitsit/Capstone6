@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "AddTask";
+}
+
+<h2>Add Task</h2>
+
+<form action="/Home/SaveNewTask/Welcome" method="post">
+    User ID: <input type="text" name="UserName"  /><br /><br />
+    <input type="text" name="Description" placeholder="Enter Task Description" /><br /><br />
+    <input type="text" name="DueDate" placeholder="Enter Due Date" /><br /><br />
+    Status: <select name="Status">
+            <option value="Incomplete" selected>Incomplete</option>
+            <option value="Complete">Complete</option>
+            </select>
+
+    <input type="submit" value="Add" /><br /><br />
+</form>
+
+

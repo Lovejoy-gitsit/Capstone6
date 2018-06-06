@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "EditTask";
+}
+
+<h2>EditTask</h2>
+
+<form action="/Home/SaveUpdatedTask" method="post">
+    User ID: <input type="text" name="UserName" value="@ViewBag.Task.UserName"/><br /><br />
+    <input type="text" name="Description" value="@ViewBag.Task.Description" /><br /><br />
+    <input type="text" name="DueDate" value="@ViewBag.Task.DueDate" /><br /><br />
+    Status: <select name="Status">
+        <option value="Incomplete" selected>Incomplete</option>
+        <option value="Complete">Complete</option>
+    </select>
+    <input type="text" name ="TaskNumber" value="@ViewBag.Task.TaskNumber" readonly />
+
+    <input type="submit" value="Update Item" /><br /><br />
+</form>

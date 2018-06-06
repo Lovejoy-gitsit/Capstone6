@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<h2>@ViewBag.Message</h2>
+<form action="/Home/AddTask" method="post">
+    <input type="submit" name="AddTask" value="Add" />
+</form>
+
+
+<table>
+    <tr>
+        <th>UserName</th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Task Number</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var t in ViewBag.UserTask)
+    {
+        <tr>
+            <td>@t.UserName</td>
+            <td>@t.Description</td>
+            <td>@t.DueDate</td>
+
+            <td>@t.Status</td>
+            <td><a href="/Home/DeleteTask?TaskNumber=@t.TaskNumber">Delete</a></td>
+            <td><a href="/Home/EditTask?TaskNumber=@t.TaskNumber">Edit</a></td>
+            <td><a href="/Home/EditTask?TaskNumber=@t.TaskNumber">Status</a></td>
+
+
+        </tr>
+    }
+
+
+</table>
+
+
+
+
+
